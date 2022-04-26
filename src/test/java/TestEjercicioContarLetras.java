@@ -11,6 +11,15 @@ public class TestEjercicioContarLetras {
         Assertions.assertEquals(outputEsperado, outputActual);
     }
 
+    //El Test falla porque no he conseguido meter el toLowerCase en el procedimiento contarRepeticiones
+    //En el programa funciona bien porque está controlado, pero no se programarlo para que entre en el test
+    @Test
+    public void testContarLetrasMinusMayus() {
+        char[] input = {'P', 'p', 'P', 'R', 'r'};
+        String outputEsperado = "{p=3,r=2}";
+        String outputActual = EjercicioContarLetras.contarRepeticiones(input);
+        Assertions.assertEquals(outputEsperado, outputActual);
+    }
     @Test
     public void testContarLetrasAleatorio() {
         char[] input = {'a', '!', '!', ' ', 'a'};
@@ -35,6 +44,7 @@ public class TestEjercicioContarLetras {
         Assertions.assertEquals(outputEsperado, outputActual);
     }
 
+    //Muchos de los símbolos que no se admiten están en ASCII, por lo que no se por qué no se admiten
     @Test
     public void testContarLetrasSimbolos() {
         char[] simbolos = {'!', '|','@','#','$','~','%','&','/','(',')','?','^','`','[',']','*','+','{','}',',',';','.',':','-','_'};

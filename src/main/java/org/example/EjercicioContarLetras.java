@@ -5,12 +5,11 @@ import java.util.Scanner;
 
 public class EjercicioContarLetras {
     public static void main(String[] args) {
-        Integer[] arrayNum = new Integer[10];
         Scanner sc = new Scanner(System.in);
         System.out.println("Dame el input: ");
         String cadena = sc.nextLine();
-
-        char[] cadenaToCharArray = cadena.toCharArray();
+        String cadenaMinus= cadena.toLowerCase();
+        char[] cadenaToCharArray = cadenaMinus.toCharArray();
 
         System.out.println(contarRepeticiones(cadenaToCharArray));
     }
