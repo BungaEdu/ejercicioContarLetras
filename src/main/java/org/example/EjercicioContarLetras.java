@@ -10,32 +10,26 @@ public class EjercicioContarLetras {
         System.out.println("Dame el input: ");
         String cadena = sc.nextLine();
 
-        char[] cadenaToCharArray=cadena.toCharArray();
+        char[] cadenaToCharArray = cadena.toCharArray();
 
-        for (int i = 0; i < cadenaToCharArray.length; i++) {
-            arrayNum[i]
-        }
-        System.out.println(contarRepeticiones(arrayNum));
+        System.out.println(contarRepeticiones(cadenaToCharArray));
     }
 
-    public static String contarRepeticiones(Integer[] arrayNum) {
+    public static String contarRepeticiones(char[] cadenaToCharArray) {
 
-        if (arrayNum==null)
+        if (cadenaToCharArray == null)
             return null;
 
-        HashMap<Integer, Integer> map = new HashMap<>();
-        for (Integer num : arrayNum) {
-            if (map.containsKey(num)) {
-                Integer value = map.get(num);
+        HashMap<Character, Integer> map = new HashMap<>();
+        for (char caracter : cadenaToCharArray) {
+            if (map.containsKey(caracter)) {
+                Integer value = map.get(caracter);
                 value++;
-                map.replace(num, value);
+                map.replace(caracter, value);
             } else {
-                map.put(num, 1);
+                map.put(caracter, 1);
             }
         }
         return map.toString();
-
     }
-
-
 }
