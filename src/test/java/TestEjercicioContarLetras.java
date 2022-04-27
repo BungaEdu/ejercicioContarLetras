@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 public class TestEjercicioContarLetras {
     @Test
     public void testContarLetrasIguales() {
-        char[] input = {'z', 'z', 'z', 'z', 'z'};
+        String input = "aaaaaaaa";
         String outputEsperado = "{z=5}";
         String outputActual = EjercicioContarLetras.contarRepeticiones(input);
         Assertions.assertEquals(outputEsperado, outputActual);
@@ -15,11 +15,15 @@ public class TestEjercicioContarLetras {
     //En el programa funciona bien porque está controlado, pero no se programarlo para que entre en el test
     @Test
     public void testContarLetrasMinusMayus() {
-        char[] input = {'P', 'p', 'P', 'R', 'r'};
+        String input = "PpPpr";
         String outputEsperado = "{p=3,r=2}";
         String outputActual = EjercicioContarLetras.contarRepeticiones(input);
         Assertions.assertEquals(outputEsperado, outputActual);
     }
+
+    //Se tiene que hacer obligatoriamente por String, antes tenías la función en char
+    //Ahora lo tienes en string, por lo que es mejor.
+    //"((HAY QUE CORREGIRLO))""
     @Test
     public void testContarLetrasAleatorio() {
         char[] input = {'a', '!', '!', ' ', 'a'};

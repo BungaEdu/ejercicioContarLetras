@@ -8,16 +8,17 @@ public class EjercicioContarLetras {
         Scanner sc = new Scanner(System.in);
         System.out.println("Dame el input: ");
         String cadena = sc.nextLine();
-        String cadenaMinus= cadena.toLowerCase();
-        char[] cadenaToCharArray = cadenaMinus.toCharArray();
 
-        System.out.println(contarRepeticiones(cadenaToCharArray));
+        System.out.println(contarRepeticiones(cadena));
     }
 
-    public static String contarRepeticiones(char[] cadenaToCharArray) {
+    public static String contarRepeticiones(String cadena) {
 
-        if (cadenaToCharArray == null)
+        if (cadena == null)
             return null;
+
+        char[] cadenaToCharArray = cadena.toLowerCase().toCharArray();
+
 
         HashMap<Character, Integer> map = new HashMap<>();
         for (char caracter : cadenaToCharArray) {
