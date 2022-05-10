@@ -28,7 +28,7 @@ public class TestEjercicioContarLetras {
     public void testContarLetrasAleatorio() {
         char[] input = {'a', '!', '!', ' ', 'a'};
         String outputEsperado = "{ =1, a=2, !=2}";
-        String outputActual = EjercicioContarLetras.contarRepeticiones(input);
+        String outputActual = EjercicioContarLetras.contarRepeticiones(String.valueOf(input));
         Assertions.assertEquals(outputEsperado, outputActual);
     }
 
@@ -36,7 +36,7 @@ public class TestEjercicioContarLetras {
     public void testContarLetrasVacio() {
         char[] input = {};
         String outputEsperado = "{}";
-        String outputActual = EjercicioContarLetras.contarRepeticiones(input);
+        String outputActual = EjercicioContarLetras.contarRepeticiones(String.valueOf(input));
         Assertions.assertEquals(outputEsperado, outputActual);
     }
 
@@ -44,7 +44,7 @@ public class TestEjercicioContarLetras {
     public void testContarLetrasWhiteSpace() {
         char[] input = {' ', ' ', ' ', ' ', ' '};
         String outputEsperado = "{ =5}";
-        String outputActual = EjercicioContarLetras.contarRepeticiones(input);
+        String outputActual = EjercicioContarLetras.contarRepeticiones(String.valueOf(input));
         Assertions.assertEquals(outputEsperado, outputActual);
     }
 
@@ -54,7 +54,7 @@ public class TestEjercicioContarLetras {
         char[] simbolos = {'!', '|','@','#','$','~','%','&','/','(',')','?','^','`','[',']','*','+','{','}',',',';','.',':','-','_'};
         // No se admiten: =, €,¬,¿,¡,¨,´
         String outputEsperado="{@=1, [=1, ]=1, ^=1, _=1, `=1, !=1, #=1, $=1, %=1, &=1, (=1, )=1, *=1, +=1, ,=1, -=1, .=1, /=1, :=1, {=1, ;=1, |=1, }=1, ~=1, ?=1}";
-        String outputActual = EjercicioContarLetras.contarRepeticiones(simbolos);
+        String outputActual = EjercicioContarLetras.contarRepeticiones(String.valueOf(simbolos));
         Assertions.assertEquals(outputEsperado, outputActual);
     }
 }
